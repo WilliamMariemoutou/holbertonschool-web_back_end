@@ -8,10 +8,10 @@ import math
 def floor(n: float) -> int:
     """
     Returns the floor of a float n
-    
+
     Args:
     n (float): the number put to floor
-    
+
     Returns:
     floor as value n
     """
