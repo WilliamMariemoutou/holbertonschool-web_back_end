@@ -15,5 +15,5 @@ def sum_list(input_list: List[float]) -> float:
     Returns:
     The sum of thee numbers in the list as a float
     """
-    
+
     return sum(input_list)
