@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""function to do basic async"""
+
 
 import asyncio
 import random
