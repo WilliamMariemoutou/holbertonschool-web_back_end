@@ -10,20 +10,17 @@ function countStudents(path) {
     throw new Error('Cannot load the database');
   }
 
-  // Split file into lines
-  const lines = data.split('\n');
+  // Split file into lines and remove empty lines
+  const lines = data.split('\n').filter((line) => line.trim() !== '');
 
-  // Remove empty lines
-  const students = lines.filter((line) => line.trim() !== '');
-
-  // Remove header line
-  students.shift();
+  // Remove the header line
+  const students = lines.slice(1);
 
   console.log(`Number of students: ${students.length}`);
 
   const fields = {};
 
-  // Loop through each student
+  // Group students by field
   students.forEach((student) => {
     const studentData = student.split(',');
     const firstName = studentData[0];
@@ -36,7 +33,7 @@ function countStudents(path) {
     fields[field].push(firstName);
   });
 
-  // Print students per field
+  // Print number of students per field
   for (const field in fields) {
     if (Object.prototype.hasOwnProperty.call(fields, field)) {
       const names = fields[field];
