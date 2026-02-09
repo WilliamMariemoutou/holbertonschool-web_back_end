@@ -8,8 +8,8 @@ class StudentsController {
       .then((fields) => {
         let output = 'This is the list of our students';
 
-        const sortedFields = Object.keys(fields).sort((a, b) =>
-          a.toLowerCase().localeCompare(b.toLowerCase()),
+        const sortedFields = Object.keys(fields).sort(
+          (a, b) => a.toLowerCase().localeCompare(b.toLowerCase()),
         );
 
         sortedFields.forEach((field) => {
@@ -25,7 +25,7 @@ class StudentsController {
   }
 
   static getAllStudentsByMajor(req, res) {
-    const major = req.params.major;
+    const { major } = req.params;
     const database = process.argv[2];
 
     if (major !== 'CS' && major !== 'SWE') {
